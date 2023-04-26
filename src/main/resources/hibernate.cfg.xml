@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 5.3//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-5.3.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/software_architecture?currentSchema=struts</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">postgres</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+
+
+        <!-- added to create table-->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="current_session_context_class">thread</property>
+        <!-- mapping-->
+        <mapping class="ma.ac.uir.entity.Etudiant"/>
+        <mapping class="ma.ac.uir.entity.Specialite"/>
+        <mapping class="ma.ac.uir.entity.Module"/>
+    </session-factory>
+</hibernate-configuration>
